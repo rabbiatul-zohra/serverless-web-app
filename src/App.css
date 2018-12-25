@@ -30,3 +30,7 @@
     transform: rotate(360deg);
   }
 }
+
+.ui.page.modals.transition.visible {
+  display: flex !important;
+}
