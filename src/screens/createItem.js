@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Form, Modal, Button } from "semantic-ui-react";
 
 import { API } from "aws-amplify";
-
+const uuidv1 = require("uuid/v1");
 class CreateItemModal extends Component {
   constructor(props) {
     super(props);
@@ -16,10 +16,11 @@ class CreateItemModal extends Component {
     this.setState({ [name]: value });
   }
   handleSubmit(event) {
-    let apiName = "sampleCloudApi";
-    let path = "/items";
+    let apiName = "ServerlessReactExampleCRUD";
+    let path = "/ServerlessReactExample";
     let newItem = {
       body: {
+        ID: uuidv1(),
         name: this.state.itemName,
         price: this.state.itemPrice,
         description: this.state.itemDescription
