@@ -21,9 +21,9 @@ class CreateItemModal extends Component {
     let newItem = {
       body: {
         ID: uuidv1(),
-        name: this.state.itemName,
-        price: this.state.itemPrice,
-        description: this.state.itemDescription
+        ItemName: this.state.itemName,
+        ItemPrice: this.state.itemPrice,
+        ItemDescription: this.state.itemDescription
       }
     };
     API.post(apiName, path, newItem)
@@ -34,6 +34,7 @@ class CreateItemModal extends Component {
         console.log(error.response);
       });
     event.preventDefault();
+    this.props.getItems();
     this.handleClose();
   }
   handleOpen = () => this.setState({ modalOpen: true });

@@ -1,37 +1,39 @@
---- !com.amazonaws.mobilehub.v0.Project 
+---
+!com.amazonaws.mobilehub.v0.Project
 features:
-  cloudlogic: !com.amazonaws.mobilehub.v0.CloudLogic 
+  cloudlogic: !com.amazonaws.mobilehub.v0.CloudLogic
     components:
-      ServerlessReactExampleCRUD: !com.amazonaws.mobilehub.v0.API 
+      ServerlessReactExampleCRUD: !com.amazonaws.mobilehub.v0.API
         attributes:
           name: ServerlessReactExampleCRUD
           requires-signin: false
         paths:
-          /ServerlessReactExample: !com.amazonaws.mobilehub.v0.Function 
+          /ServerlessReactExample: !com.amazonaws.mobilehub.v0.Function
             name: rverlessReactExample
-            codeFilename: uploads/rverlessReactExample-20181226221438.zip
+            codeFilename: uploads/rverlessReactExample-20181229195245.zip
             handler: lambda.handler
             enableCORS: true
             runtime: nodejs6.10
             environment: {}
-          '/ServerlessReactExample/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
+          "/ServerlessReactExample/{proxy+}":
+            !com.amazonaws.mobilehub.v0.Function
             name: rverlessReactExample
-            codeFilename: uploads/rverlessReactExample-20181226221438.zip
+            codeFilename: uploads/rverlessReactExample-20181229195245.zip
             handler: lambda.handler
             enableCORS: true
             runtime: nodejs6.10
             environment: {}
-  content-delivery: !com.amazonaws.mobilehub.v0.ContentDelivery 
+  content-delivery: !com.amazonaws.mobilehub.v0.ContentDelivery
     attributes:
       enabled: true
       visibility: public-global
     components:
       release: !com.amazonaws.mobilehub.v0.Bucket {}
-  database: !com.amazonaws.mobilehub.v0.Database 
+  database: !com.amazonaws.mobilehub.v0.Database
     components:
-      database-nosql: !com.amazonaws.mobilehub.v0.NoSQLDatabase 
+      database-nosql: !com.amazonaws.mobilehub.v0.NoSQLDatabase
         tables:
-          - !com.amazonaws.mobilehub.v0.NoSQLTable 
+          - !com.amazonaws.mobilehub.v0.NoSQLTable
             attributes:
               ID: S
               ItemDescription: S
@@ -39,11 +41,11 @@ features:
               ItemPrice: N
             hashKeyName: ID
             hashKeyType: S
-            rangeKeyName: ''
-            rangeKeyType: ''
+            rangeKeyName: ""
+            rangeKeyType: ""
             tableName: ___DYNAMIC_PREFIX___-ServerlessReactExample
             tablePrivacy: public
-  mobile-analytics: !com.amazonaws.mobilehub.v0.Pinpoint 
+  mobile-analytics: !com.amazonaws.mobilehub.v0.Pinpoint
     components:
       analytics: !com.amazonaws.mobilehub.v0.PinpointAnalytics {}
   sign-in: !com.amazonaws.mobilehub.v0.SignIn {}
