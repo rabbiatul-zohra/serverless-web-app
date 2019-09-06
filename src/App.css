@@ -33,4 +33,5 @@
 
 .ui.page.modals.transition.visible {
   display: flex !important;
+  color: #282c34;
 }
