@@ -2,7 +2,7 @@
 [Enter a brief description of what this pull request does]
 
 [Add the jira ticket to this PR]
-> Tickets: [IPRADIOAPP-XXXX](https://jira.dev.bbc.co.uk/browse/IPRADIOAPP-XXXX)
+> Tickets: [SILVER-XXX](https://jira.dev.bbc.co.uk/browse/SILVER-XXX)
 
 # 🛠 How
 [How does this PR perform the features described in What]
